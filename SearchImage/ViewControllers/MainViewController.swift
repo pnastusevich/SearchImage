@@ -11,7 +11,7 @@ final class MainViewController: UIViewController {
     
     var userEmail = ""
     var userName = ""
-
+    
     private let storageManager = StorageManager.shared
 
     @IBOutlet weak var welcomLabel: UILabel!

@@ -11,7 +11,6 @@ final class RegistrationViewController: UIViewController {
     
     var userEmail = ""
     var userName = ""
-    var userPassword = ""
 
     private var users: [User] = []
     
@@ -29,23 +28,24 @@ final class RegistrationViewController: UIViewController {
         guard let mainViewController = segue.destination as? MainViewController else { return }
         mainViewController.userEmail = userEmail
         mainViewController.userName = userName
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard let nameTF = nameTextField.text else { return false }
-        guard let emailTF = emailTextField.text else { return false }
-        guard let passwordTF = passwordTextField.text else { return false }
         
-        saveUser(email: emailTF, name: nameTF, password: passwordTF)
-        return true
     }
+
     
-    // скрываем клавиатуру по нажатию по экрану
+    // скрываем клавиатуру по нажатию на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-        
+    
+//     MARK: IBAction Methods
+    @IBAction func loginInButton(_ sender: UIButton) {
+        if validateData() {
+            saveUser(email: emailTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "")
+        } else { return }
+    }
+    
+    // MARK: Private Methods
     private func saveUser(email: String, name: String, password: String) {
         storageManager.create(email, name, password)
         userEmail = email

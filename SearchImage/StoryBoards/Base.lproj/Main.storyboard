@@ -52,17 +52,17 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7KD-t1-I8b">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4y-89-NHi">
                                         <rect key="frame" x="0.0" y="64" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQi-Cx-jfF">
                                         <rect key="frame" x="0.0" y="128" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrG-H7-wNG">
                                         <rect key="frame" x="0.0" y="192" width="310" height="38"/>
@@ -71,7 +71,8 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="MBS-aR-bqN" kind="presentation" modalPresentationStyle="fullScreen" id="ndJ-z4-l0B"/>
+                                            <action selector="loginInButton:" destination="PX5-uV-XUV" eventType="touchUpInside" id="C5v-fW-uoV"/>
+                                            <segue destination="MBS-aR-bqN" kind="presentation" modalPresentationStyle="fullScreen" id="fNh-co-iKu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBo-JG-B6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="-35"/>
+            <point key="canvasLocation" x="2280" y="-36"/>
         </scene>
         <!--Users list screen-->
         <scene sceneID="L9q-Zf-OrN">
@@ -170,7 +171,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-rD-MWX">
                                         <rect key="frame" x="0.0" y="54" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-Ss-Vkh">
                                         <rect key="frame" x="0.0" y="118" width="310" height="38"/>
@@ -284,9 +285,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iUa-H5-UMW"/>
-        <segue reference="lEj-17-jAN"/>
-        <segue reference="4Gr-zW-OiB"/>
+        <segue reference="0HD-Rk-3EI"/>
+        <segue reference="fNh-co-iKu"/>
+        <segue reference="IKk-rF-cpv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

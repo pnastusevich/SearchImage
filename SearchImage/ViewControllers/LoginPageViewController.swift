@@ -21,7 +21,7 @@ final class LoginPageViewController: UIViewController {
         welcomLabel.text = "Your email: \(user.mail ?? "")"
     }
     
-    // скрываем клавиатуру по нажатию по экрану
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -44,16 +44,6 @@ final class LoginPageViewController: UIViewController {
         }
         return true
     }
-     
-    
-    // MARK: Private Methods
-    private func showAlert(withTitle title: String, andMessage message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTextField.text = ""
-        }
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
+
 
 }

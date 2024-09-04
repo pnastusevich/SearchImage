@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		85A73C652C88536F00C764F9 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A73C642C88536F00C764F9 /* StorageManager.swift */; };
+		85A73C682C88B8B200C764F9 /* Validation + Extenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A73C672C88B8B200C764F9 /* Validation + Extenshion.swift */; };
+		85A73C6A2C88D0C700C764F9 /* AlertController + Extenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A73C692C88D0C700C764F9 /* AlertController + Extenshion.swift */; };
 		85AB07B52C879DED00EA5042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB07B42C879DED00EA5042 /* AppDelegate.swift */; };
 		85AB07B72C879DED00EA5042 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB07B62C879DED00EA5042 /* SceneDelegate.swift */; };
 		85AB07BC2C879DED00EA5042 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 85AB07BB2C879DED00EA5042 /* Base */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		85A73C642C88536F00C764F9 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		85A73C672C88B8B200C764F9 /* Validation + Extenshion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation + Extenshion.swift"; sourceTree = "<group>"; };
+		85A73C692C88D0C700C764F9 /* AlertController + Extenshion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController + Extenshion.swift"; sourceTree = "<group>"; };
 		85AB07B12C879DED00EA5042 /* SearchImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB07B42C879DED00EA5042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AB07B62C879DED00EA5042 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85A73C662C88B86D00C764F9 /* Extenshions */ = {
+			isa = PBXGroup;
+			children = (
+				85A73C672C88B8B200C764F9 /* Validation + Extenshion.swift */,
+				85A73C692C88D0C700C764F9 /* AlertController + Extenshion.swift */,
+			);
+			path = Extenshions;
+			sourceTree = "<group>";
+		};
 		85AB07A82C879DED00EA5042 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +83,7 @@
 			children = (
 				85AB07CB2C879E3B00EA5042 /* App */,
 				85AB07CC2C879E5000EA5042 /* ViewControllers */,
+				85A73C662C88B86D00C764F9 /* Extenshions */,
 				85AB07D02C879EF100EA5042 /* Services */,
 				85AB07CF2C879ECF00EA5042 /* Models */,
 				85AB07CD2C879E6100EA5042 /* StoryBoards */,
@@ -207,8 +221,10 @@
 				85AB07BF2C879DED00EA5042 /* SearchImage.xcdatamodeld in Sources */,
 				85AB07D62C87A9B200EA5042 /* SelectUserListViewController.swift in Sources */,
 				85AB07B52C879DED00EA5042 /* AppDelegate.swift in Sources */,
+				85A73C682C88B8B200C764F9 /* Validation + Extenshion.swift in Sources */,
 				85A73C652C88536F00C764F9 /* StorageManager.swift in Sources */,
 				85AB07D22C87A93C00EA5042 /* SplashScreenViewController.swift in Sources */,
+				85A73C6A2C88D0C700C764F9 /* AlertController + Extenshion.swift in Sources */,
 				85AB07B72C879DED00EA5042 /* SceneDelegate.swift in Sources */,
 				85AB07D82C87A9DB00EA5042 /* LoginPageViewController.swift in Sources */,
 				85AB07D42C87A97600EA5042 /* RegistrationViewController.swift in Sources */,
