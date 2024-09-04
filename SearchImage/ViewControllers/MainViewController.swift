@@ -7,14 +7,23 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
+    
+    var userEmail = ""
+    var userName = ""
 
+    private let storageManager = StorageManager.shared
+
+    @IBOutlet weak var welcomLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomLabel.text = "Welcome, \(userName)! Email is \(userEmail)"
+        
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func deleteActionButton() {
+        
     }
     
-
-
 }
