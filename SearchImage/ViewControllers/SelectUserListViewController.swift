@@ -10,12 +10,10 @@ import UIKit
 final class SelectUserListViewController: UITableViewController {
     
     private var userList: [User] = []
-    
     private let storageManager = StorageManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchData()
     }
     

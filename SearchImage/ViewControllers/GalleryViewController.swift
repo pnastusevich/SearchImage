@@ -7,23 +7,19 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class GalleryViewController: UIViewController {
     
-    var userEmail = ""
-    var userName = ""
-    
+    var user: User!
     private let storageManager = StorageManager.shared
 
     @IBOutlet weak var welcomLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomLabel.text = "Welcome, \(userName)! Email is \(userEmail)"
         
+        guard let user = user else { return }
+        welcomLabel.text = "Welcome, \(user.name!)!"
     }
-
-    @IBAction func deleteActionButton() {
-        
-    }
-    
 }
+
+

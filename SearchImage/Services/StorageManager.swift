@@ -30,12 +30,14 @@ final class StorageManager {
     }
     
     // MARK: - CRUD
-    func create(_ userMail: String,_ userName: String,_ userPassword: String) {
+    func create(_ userMail: String,_ userName: String,_ userPassword: String) -> User? {
        let user = User(context: viewContext)
         user.mail = userMail
         user.name = userName
         user.password = userPassword
         saveContext()
+        
+        return user
     }
     
     func fetchData(completion: (Result<[User], Error>) -> Void) {

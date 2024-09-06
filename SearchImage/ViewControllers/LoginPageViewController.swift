@@ -10,7 +10,6 @@ import UIKit
 final class LoginPageViewController: UIViewController {
     
     var user: User!
-
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var welcomLabel: UILabel!
     
@@ -21,7 +20,6 @@ final class LoginPageViewController: UIViewController {
         welcomLabel.text = "Your email: \(user.mail ?? "")"
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -29,12 +27,21 @@ final class LoginPageViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mainVC = segue.destination as? MainViewController else { return }
+        guard let tapBarVC = segue.destination as? TapBarViewController else { return }
         
-        guard let userName = user.name else { return }
-        mainVC.userName = userName
-        guard let userEmail = user.mail else { return }
-        mainVC.userEmail = userEmail
+        tapBarVC.viewControllers?.forEach{ viewController in
+            guard let navigationVC = viewController as? UINavigationController else { return }
+            
+            if let galleryVC = navigationVC.topViewController as? GalleryViewController {
+                galleryVC.user = user
+                
+            } else if let searchVC = navigationVC.topViewController as? SearchCollectionViewController {
+                searchVC.user = user
+                
+            } else if let settingsVC = navigationVC.topViewController as? SettingsViewController {
+                settingsVC.user = user
+            }
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -44,6 +51,6 @@ final class LoginPageViewController: UIViewController {
         }
         return true
     }
-
+    
 
 }

@@ -9,11 +9,7 @@ import UIKit
 
 final class RegistrationViewController: UIViewController {
     
-    var userEmail = ""
-    var userName = ""
-
-    private var users: [User] = []
-    
+    private var user: User?
     private let storageManager = StorageManager.shared
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -22,16 +18,29 @@ final class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mainViewController = segue.destination as? MainViewController else { return }
-        mainViewController.userEmail = userEmail
-        mainViewController.userName = userName
+        guard let tapBarVC = segue.destination as? TapBarViewController else { return }
+        
+        tapBarVC.viewControllers?.forEach{ viewController in
+            guard let navigationVC = viewController as? UINavigationController else { return }
+            
+            if let galleryVC = navigationVC.topViewController as? GalleryViewController {
+                galleryVC.user = user
+                
+            } else if let searchVC = navigationVC.topViewController as? SearchCollectionViewController {
+                searchVC.user = user
+                
+            } else if let settingsVC = navigationVC.topViewController as? SettingsViewController {
+                settingsVC.user = user
+           
+            }
+        }
         
     }
 
-    
     // скрываем клавиатуру по нажатию на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -47,9 +56,10 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: Private Methods
     private func saveUser(email: String, name: String, password: String) {
-        storageManager.create(email, name, password)
-        userEmail = email
-        userName = name
+        user = storageManager.create(email, name, password)
+        
     }
+    
+    
 }
 
