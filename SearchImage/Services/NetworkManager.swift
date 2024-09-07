@@ -5,7 +5,7 @@
 //  Created by Паша Настусевич on 5.09.24.
 //
 
-import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case invalidURL

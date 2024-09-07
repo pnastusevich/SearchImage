@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchImageCollectionViewCell: UICollectionViewCell {
+final class SearchImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -22,7 +22,6 @@ class SearchImageCollectionViewCell: UICollectionViewCell {
                 self.imageView.image = UIImage (data: imageData)
             case .failure(let error):
                 print(error)
-                
             }
         }
     }
