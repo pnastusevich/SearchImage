@@ -9,17 +9,21 @@ import UIKit
 
 final class ImageInfoViewController: UIViewController {
     
-    var image = ""
+    var selectedImage: Images?
+    
     @IBOutlet weak var imageInfoView: UIImageView!
+    
     let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchImage()
+        imageInfoView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func fetchImage() {
-        guard let imageURL = URL(string: image) else { return }
+    func fetchImage() {
+        guard let selectedImage else { return }
+        guard let imageURL = URL(string: selectedImage.largeImageURL) else { return }
         networkManager.fetchImage(from: imageURL) { [unowned self] result in
             switch result {
             case .success(let imageData):
@@ -29,7 +33,9 @@ final class ImageInfoViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func saveImageButtonn(_ sender: UIButton) {
+            showAlert(withTitle: "Save image done", andMessage: "Image saves")
+        }
+    }
 
-   
-
-}

@@ -9,6 +9,7 @@ import Foundation
 
 struct ImageModel: Decodable {
     
+    let totalHits: Int
     let hits: [Images]
 }
 

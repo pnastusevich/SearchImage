@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		850A49DF2C8A005900D68C7E /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A49DE2C8A005900D68C7E /* TapBarViewController.swift */; };
 		850A49E12C8A0A9A00D68C7E /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A49E02C8A0A9A00D68C7E /* SearchCollectionViewController.swift */; };
+		855F6D482C8F6D7B0024DB46 /* SavedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F6D472C8F6D7B0024DB46 /* SavedImage.swift */; };
+		855F6D4A2C8F7B710024DB46 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F6D492C8F7B710024DB46 /* GalleryCollectionViewCell.swift */; };
 		856EEFAB2C8A0DEB007DE8E9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EEFAA2C8A0DEB007DE8E9 /* SettingsViewController.swift */; };
 		856EEFAD2C8A27DC007DE8E9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EEFAC2C8A27DC007DE8E9 /* NetworkManager.swift */; };
 		856EEFAF2C8A2DF9007DE8E9 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EEFAE2C8A2DF9007DE8E9 /* ImageModel.swift */; };
@@ -28,11 +30,15 @@
 		85AB07D62C87A9B200EA5042 /* SelectUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB07D52C87A9B200EA5042 /* SelectUserListViewController.swift */; };
 		85AB07D82C87A9DB00EA5042 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB07D72C87A9DB00EA5042 /* LoginPageViewController.swift */; };
 		85AB07DA2C87A9F700EA5042 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB07D92C87A9F700EA5042 /* GalleryViewController.swift */; };
+		85B3CF232C8E26BE00377698 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 85B3CF222C8E26BE00377698 /* SDWebImage */; };
+		85B3CF252C8E26BE00377698 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 85B3CF242C8E26BE00377698 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		850A49DE2C8A005900D68C7E /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
 		850A49E02C8A0A9A00D68C7E /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		855F6D472C8F6D7B0024DB46 /* SavedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImage.swift; sourceTree = "<group>"; };
+		855F6D492C8F7B710024DB46 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		856EEFAA2C8A0DEB007DE8E9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		856EEFAC2C8A27DC007DE8E9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		856EEFAE2C8A2DF9007DE8E9 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B3CF252C8E26BE00377698 /* SDWebImageMapKit in Frameworks */,
+				85B3CF232C8E26BE00377698 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				856EEFB12C8A3D3E007DE8E9 /* SearchImageCollectionViewCell.swift */,
+				855F6D492C8F7B710024DB46 /* GalleryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 			children = (
 				85AB07BD2C879DED00EA5042 /* SearchImage.xcdatamodeld */,
 				856EEFAE2C8A2DF9007DE8E9 /* ImageModel.swift */,
+				855F6D472C8F6D7B0024DB46 /* SavedImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +210,10 @@
 			dependencies = (
 			);
 			name = SearchImage;
+			packageProductDependencies = (
+				85B3CF222C8E26BE00377698 /* SDWebImage */,
+				85B3CF242C8E26BE00377698 /* SDWebImageMapKit */,
+			);
 			productName = SearchImage;
 			productReference = 85AB07B12C879DED00EA5042 /* SearchImage.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 85AB07A82C879DED00EA5042;
+			packageReferences = (
+				85B3CF212C8E26BE00377698 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 85AB07B22C879DED00EA5042 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,6 +287,8 @@
 				85AB07D82C87A9DB00EA5042 /* LoginPageViewController.swift in Sources */,
 				850A49E12C8A0A9A00D68C7E /* SearchCollectionViewController.swift in Sources */,
 				856EEFAD2C8A27DC007DE8E9 /* NetworkManager.swift in Sources */,
+				855F6D4A2C8F7B710024DB46 /* GalleryCollectionViewCell.swift in Sources */,
+				855F6D482C8F6D7B0024DB46 /* SavedImage.swift in Sources */,
 				85AB07D42C87A97600EA5042 /* RegistrationViewController.swift in Sources */,
 				85AB07DA2C87A9F700EA5042 /* GalleryViewController.swift in Sources */,
 				856EEFAF2C8A2DF9007DE8E9 /* ImageModel.swift in Sources */,
@@ -503,6 +522,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85B3CF212C8E26BE00377698 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85B3CF222C8E26BE00377698 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B3CF212C8E26BE00377698 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		85B3CF242C8E26BE00377698 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B3CF212C8E26BE00377698 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		85AB07BD2C879DED00EA5042 /* SearchImage.xcdatamodeld */ = {

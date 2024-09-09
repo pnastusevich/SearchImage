@@ -30,9 +30,6 @@ final class RegistrationViewController: UIViewController {
             if let galleryVC = navigationVC.topViewController as? GalleryViewController {
                 galleryVC.user = user
                 
-            } else if let searchVC = navigationVC.topViewController as? SearchCollectionViewController {
-                searchVC.user = user
-                
             } else if let settingsVC = navigationVC.topViewController as? SettingsViewController {
                 settingsVC.user = user
            
