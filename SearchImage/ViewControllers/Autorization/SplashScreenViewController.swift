@@ -10,19 +10,16 @@ import UIKit
 final class SplashScreenViewController: UIViewController {
     
     private let storageManager = StorageManager.shared
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         activityIndicator.startAnimating()
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                     self?.activityIndicator.stopAnimating()
-                    // Выполняем переход на следующий ViewController
                     self?.fetchData()
-                }
+        }
     }
     
     private func fetchData() {

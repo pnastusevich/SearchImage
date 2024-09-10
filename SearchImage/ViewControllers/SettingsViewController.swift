@@ -12,8 +12,17 @@ final class SettingsViewController: UIViewController {
     var user: User!
     let storageManager = StorageManager.shared
 
+    @IBOutlet weak var deleteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        deleteButton.backgroundColor = UIColor.white
+        deleteButton.layer.cornerRadius = 10.0
+        deleteButton.layer.shadowColor = UIColor.darkGray.cgColor
+        deleteButton.layer.shadowRadius = 5.0
+        deleteButton.layer.shadowOpacity = 0.1
+        deleteButton.layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
     }
     
     @IBAction func deleteActionButton() {

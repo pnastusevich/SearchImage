@@ -14,17 +14,13 @@ final class SearchImageCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var selectionOverlay: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         imageView.clipsToBounds = true
         checkMark.isHidden = true
-        
-        selectionOverlay.backgroundColor = UIColor.clear
-        selectionOverlay.layer.borderColor = UIColor.systemBlue.cgColor
-        selectionOverlay.layer.borderWidth = 3
-        selectionOverlay.isHidden = true
+        imageView.layer.cornerRadius = 10.0
+    
     }
     
     override func prepareForReuse() {
@@ -33,9 +29,16 @@ final class SearchImageCollectionViewCell: UICollectionViewCell {
     }
     
     func setSelected(_ selected: Bool) {
-           selectionOverlay.isHidden = !selected
            checkMark.isHidden = !selected
+            
+        if selected {
+            imageView.alpha = 0.7
+        } else {
+            imageView.alpha = 1
+        }
+            
        }
+
 
     func loadImage(with image: Images) {
         guard let imageURL = URL(string: image.previewURL) else { return }

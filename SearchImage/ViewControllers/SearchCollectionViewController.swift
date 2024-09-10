@@ -11,6 +11,7 @@ final class SearchCollectionViewController: UIViewController {
    
     var selectedImageLink: Images?
     
+    // MARK: - Private properties
     private let networkManager = NetworkManager.shared
     private let savedImages = SavedImages.shared
 
@@ -28,6 +29,7 @@ final class SearchCollectionViewController: UIViewController {
     }
     
     // MARK: - IBOutlet
+    @IBOutlet weak var noContentStackView: UIStackView!
     @IBOutlet weak var chooseBarButton: UIBarButtonItem!
     @IBOutlet weak var actionBarButton: UIBarButtonItem!
     @IBOutlet weak var imageCollectionView: UICollectionView!
@@ -41,9 +43,11 @@ final class SearchCollectionViewController: UIViewController {
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         imageCollectionView.allowsMultipleSelection = false
-        
+    
         updateNavButtonState()
         setupSearchBar()
+        
+        
     }
 
     // MARK: - IBAction methods
@@ -67,6 +71,9 @@ final class SearchCollectionViewController: UIViewController {
         for selectedImage in selectedImages {
             savedImages.photos.append(selectedImage)
         }
+        self.refresh()
+        toggleSelectionMode()
+        
             showAlert(withTitle: "Images saved",
                       andMessage: "All images are stored in the gallery"
             )
@@ -133,6 +140,14 @@ final class SearchCollectionViewController: UIViewController {
         }
         updateNavButtonState()
     }
+    
+    private func updateStackViewVisibility() {
+           if images.isEmpty {
+               noContentStackView.isHidden = false
+           } else {
+               noContentStackView.isHidden = true
+           }
+       }
 }
 
 // MARK: Extension UICollectionViewDelegate, UICollectionViewDataSource
@@ -153,14 +168,13 @@ extension SearchCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isSelectionModeActive {
             updateNavButtonState()
-            
-//            updateSendButtonState()
+
             let cell = imageCollectionView.cellForItem(at: indexPath) as! SearchImageCollectionViewCell
             guard let image = cell.imageView.image else { return }
             selectedImages.append(image)
             cell.setSelected(true)
             
-            
+
         } else {
             self.selectedImageLink = images[indexPath.row]
             performSegue(withIdentifier: "showDetail", sender: self)
@@ -221,6 +235,7 @@ extension  SearchCollectionViewController: UISearchBarDelegate {
                         case .success(let images):
                            self.images = images.hits
                            self.imageCollectionView.reloadData()
+                            self.updateStackViewVisibility()
                             self.refresh()
                        case .failure(let error):
                            print(error)

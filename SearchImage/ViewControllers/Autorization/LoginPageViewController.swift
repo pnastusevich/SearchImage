@@ -13,11 +13,21 @@ final class LoginPageViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var welcomLabel: UILabel!
     
+    @IBOutlet weak var loginInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginInButton.backgroundColor = UIColor.white
+        loginInButton.layer.cornerRadius = 10.0
+        loginInButton.layer.shadowColor = UIColor.darkGray.cgColor
+        loginInButton.layer.shadowRadius = 5.0
+        loginInButton.layer.shadowOpacity = 0.1
+        loginInButton.layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
+        
+        
         title = "Hello, \(user.name ?? "")"
-        welcomLabel.text = "Your email: \(user.mail ?? "")"
+        welcomLabel.text = "Your email: \(user.mail ?? ""). Enter your password"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
